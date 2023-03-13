@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Random Background Color</title>
+	<style>
+		body {
+			background-color: #000;
+		}
+	</style>
+	<script>
+		// Function to generate a random color in hexadecimal format
+		function getRandomColor() {
+			var letters = '0123456789ABCDEF';
+			var color = '#';
+			for (var i = 0; i < 6; i++) {
+				color += letters[Math.floor(Math.random() * 16)];
+			}
+			return color;
+		}
+
+		// Function to change the background color every 1 second
+		function changeBackgroundColor() {
+			document.body.style.backgroundColor = getRandomColor();
+			setTimeout(changeBackgroundColor, 1000);
+		}
+
+		// Call the changeBackgroundColor function on page load
+		window.onload = function() {
+			changeBackgroundColor();
+		};
+	</script>
+</head>
+<body>
+	<h1>Random Background Color</h1>
+	<p>The background color of this page changes randomly every 1 second.</p>
+</body>
+</html>
